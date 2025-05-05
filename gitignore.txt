@@ -1,0 +1,5 @@
+# Ignore Visual Studio workspace folder
+.vs/
+
+# (Optional) Ignore Git folder — though this is unnecessary and ineffective in an actual repo
+.git/
