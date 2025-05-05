@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/SomeBodyUwU/Lab4.git', credentialsId: 'github-token'
+                git url: 'https://github.com/SomeBodyUwU/Lab_4.git', credentialsId: 'github-token'
             }
         }
         
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" laba4_test.sln /p:Configuration=Debug /p:Platform=x64 /m'
+                        bat '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Lab_4.sln /p:Configuration=Debug /p:Platform=x64 /m'
                     } catch (Exception e) {
                         echo "Build error: ${e.message}"
                         currentBuild.result = 'FAILURE'
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat '"F:\\VS code folders\\laba4_test\\x64\\Debug\\laba4_test.exe"'
+                        bat '"F:\\VS code folders\\Lab_4\\x64\\Debug\\Lab_4.exe"'
                     } catch (Exception e) {
                         echo "Test error: ${e.message}"
                         currentBuild.result = 'FAILURE'
